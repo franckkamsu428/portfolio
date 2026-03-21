@@ -1,310 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZX78LMENK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
-  gtag('config', 'G-9ZX78LMENK');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franck Kamsu | Développeur Web & Créateur Digital</title>
+    <title>Borcelle Gastronomie | Excellence & Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #f39c12; 
-            --dark-bg: #0f172a;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-light: #64748b;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --gold: #d4af37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #121212;
         }
 
-        * {
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--dark-bg); 
+            color: white; 
+            line-height: 1.6; 
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            background: #f8fafc;
-            color: var(--text-main);
-            line-height: 1.6;
+        /* BOUTON WHATSAPP CAPTIVANT (L'appel à l'action) */
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px; 
+            background: #25d366; color: white;
+            padding: 15px 30px; border-radius: 50px; 
+            text-decoration: none; display: flex;
+            align-items: center; gap: 12px; z-index: 9999; 
+            font-weight: 600; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .whatsapp-btn:hover { transform: scale(1.1) translateY(-5px); background: #1da851; }
 
-        /* Header & Navigation */
+        /* BANNIÈRE HERO (Premier regard) */
         header {
-            background: var(--dark-bg);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images%20nouveau/baniere.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            padding: 20px; border-bottom: 2px solid var(--gold);
         }
+        .logo-main { width: 160px; margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 4rem); color: var(--gold); line-height: 1.1; }
+        .hero-sub { font-size: 1.2rem; max-width: 800px; color: #f0f0f0; font-style: italic; margin: 20px 0 40px; }
 
-        header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin: 0;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+        /* SECTIONS & GRILLES */
+        .container { max-width: 1200px; margin: auto; padding: 0 5%; }
+        .section-header { text-align: center; margin: 80px 0 40px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); }
+        
+        .grid-pro { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .card-pro { background: var(--card-bg); border: 1px solid #222; transition: 0.4s; overflow: hidden; position: relative; }
+        .card-pro:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
 
-        header p {
-            color: var(--primary);
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-top: 10px;
-        }
+        .img-box { width: 100%; height: 280px; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .card-pro:hover .img-box img { transform: scale(1.1); }
+        
+        .card-info { padding: 25px; text-align: center; }
+        .card-info h3 { color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 8px; font-size: 1.5rem; }
 
-        nav {
-            margin-top: 30px;
-        }
+        /* ARCHIVES ÉLÉGANTES (Anciens projets) */
+        .archive-bg { background: #050505; padding: 100px 0; border-top: 1px solid #1a1a1a; }
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+        .card-archive { filter: grayscale(100%); transition: 0.5s; text-align: center; opacity: 0.4; }
+        .card-archive:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px); }
+        .card-archive img { width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1px solid #333; margin-bottom: 10px; }
+        .card-archive p { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px; }
 
-        nav a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Sections */
-        section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .section-title .bar {
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-
-        /* Grille de Projets Améliorée */
-        .grid-projets {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .projet-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .projet-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-
-        .img-box {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            background: #e2e8f0;
-        }
-
-        .img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .projet-card:hover img {
-            scale: 1.1;
-        }
-
-        .content-box {
-            padding: 25px;
-        }
-
-        .content-box h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.3rem;
-        }
-
-        .content-box p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Contact & CTA */
-        .contact-card {
-            background: var(--dark-bg);
-            color: white;
-            padding: 60px;
-            border-radius: 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 30px;
-            transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1eb954;
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 50px 20px; }
-            .contact-card { padding: 30px; }
-        }
+        footer { text-align: center; padding: 80px 20px; background: #000; color: #333; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Franck Kamsu</h1>
-    <p>Expert en Création de Sites Web & Catalogues</p>
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#realisations">Réalisations</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <a href="https://wa.me/237683041117" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="28" alt="WhatsApp">
+        Réserver votre table
+    </a>
 
-<section id="accueil">
-    <div class="section-title">
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <div class="bar"></div>
-        <p style="max-width: 600px; margin: 20px auto; color: var(--text-light);">
-            Je conçois des expériences numériques sur mesure pour booster la visibilité de vos commerces, 
-            restaurants et projets personnels.
-        </p>
-    </div>
-</section>
+    <header>
+        <img src="images%20nouveau/logo.png" alt="Logo Borcelle" class="logo-main">
+        <h1 class="hero-title">L'Art de la Gastronomie <br> Camerounaise</h1>
+        <p class="hero-sub">"Une expérience sensorielle unique où chaque plat raconte une histoire."</p>
+        <a href="#menu" style="padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-radius: 2px;">Voir la Carte</a>
+    </header>
 
-<section id="realisations">
-    <div class="section-title">
-        <h2>Mes Réalisations</h2>
-        <div class="bar"></div>
-    </div>
-
-    <div class="grid-projets">
+    <main class="container" id="menu">
+        <div class="section-header"><h2>Nos Incontournables</h2></div>
         
-        <div class="projet-card">
-            <div class="img-box"><img src="coiffure1.jpg" alt="Coiffure 1"></div>
-            <div class="content-box">
-                <h3>Salon de Coiffure Pro</h3>
-                <p>Interface élégante pour la gestion de services capillaires.</p>
-            </div>
+        <div class="grid-pro">
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/ndole1.jpg"></div><div class="card-info"><h3>Ndolé Royal</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/poulet1.jpg"></div><div class="card-info"><h3>Poulet Braisé Or</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/poulet2.jpg"></div><div class="card-info"><h3>Poulet Gourmet</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/plat1.jpg"></div><div class="card-info"><h3>Le Plateau Borcelle</h3></div></div>
         </div>
 
-        <div class="projet-card">
-            <div class="img-box"><img src="coiffure2.jpg" alt="Coiffure 2"></div>
-            <div class="content-box">
-                <h3>Style & Beauté</h3>
-                <p>Galerie interactive de styles et tendances.</p>
+        <div class="section-header"><h2>Fraîcheur & Jus</h2></div>
+        <div class="grid-pro">
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/jus1.jpg"></div><div class="card-info"><h3>Nectars Pressés</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/jus2.jpg"></div><div class="card-info"><h3>Cocktail Maison</h3></div></div>
+        </div>
+    </main>
+
+    <section class="archive-bg">
+        <div class="container">
+            <div class="section-header"><h2 style="font-size: 1.5rem; color: #444;">Parcours & Archives</h2></div>
+            
+            <div class="archive-grid">
+                <div class="card-archive"><img src="images%20nouveau/coiffure1.jpg"><p>Beauté v1</p></div>
+                <div class="card-archive"><img src="images%20nouveau/coiffure2.jpg"><p>Beauté v2</p></div>
+                <div class="card-archive"><img src="images%20nouveau/boutique1.jpg"><p>Mode v1</p></div>
+                <div class="card-archive"><img src="images%20nouveau/boutique2.jpg"><p>Mode v2</p></div>
+                
+                
+                <div class="card-archive"><img src="images%20nouveau/portfolio1.jpg"><p>Portfolio v1</p></div>
             </div>
         </div>
+    </section>
 
-        <div class="projet-card">
-            <div class="img-box"><img src="boutique1.jpg" alt="Boutique 1"></div>
-            <div class="content-box">
-                <h3>E-Boutique Accessoires</h3>
-                <p>Catalogue produit optimisé pour la vente en ligne.</p>
-            </div>
-        </div>
-
-        <div class="projet-card">
-            <div class="img-box"><img src="boutique2.jpg" alt="Boutique 2"></div>
-            <div class="content-box">
-                <h3>Mode & Tendance</h3>
-                <p>Présentation moderne de collections saisonnières.</p>
-            </div>
-        </div>
-
-        <a href="restaurant.html" class="projet-card">
-            <div class="img-box"><img src="plat1.jpg" alt="Restaurant"></div>
-            <div class="content-box">
-                <h3>Gastro Restaurant</h3>
-                <p>Carte digitale et système de réservation vitrine.</p>
-            </div>
-        </a>
-
-        <a href="portfolio.html" class="projet-card">
-            <div class="img-box"><img src="portfolio2.jpg" alt="Portfolio Personnel"></div>
-            <div class="content-box">
-                <h3>Portfolio Créatif</h3>
-                <p>Mise en valeur de compétences et CV en ligne.</p>
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<section id="contact">
-    <div class="contact-card">
-        <h2>Un projet en tête ?</h2>
-        <p>Basé à Douala, je suis disponible pour transformer vos idées en réalité.</p>
-        <p style="font-size: 1.1rem; color: var(--primary);">Kamsufranck237@gmail.com</p>
-        <a href="https://wa.me/237683041117" target="_blank" class="btn-whatsapp">Démarrer une discussion WhatsApp</a>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 Franck Kamsu. Tous droits réservés.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Borcelle Restaurant - Douala | Yaoundé</p>
+        <p style="margin-top: 10px;">Réalisation Portfolio témoignant d'une progression technique continue.</p>
+    </footer>
 
 </body>
 </html>
-
-
-
-
-
