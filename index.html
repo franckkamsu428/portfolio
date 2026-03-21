@@ -1,137 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borcelle Gastronomie | Excellence & Portfolio</title>
-    
+    <title>Borcelle Gastronomie | Excellence</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark-bg: #0a0a0a;
-            --card-bg: #121212;
-        }
-
+        :root { --gold: #d4af37; --dark-bg: #0a0a0a; --card-bg: #121212; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background-color: var(--dark-bg); 
-            color: white; 
-            line-height: 1.6; 
-            scroll-behavior: smooth;
-        }
-
-        /* BOUTON WHATSAPP CAPTIVANT (L'appel à l'action) */
-        .whatsapp-btn {
-            position: fixed; bottom: 30px; right: 30px; 
-            background: #25d366; color: white;
-            padding: 15px 30px; border-radius: 50px; 
-            text-decoration: none; display: flex;
-            align-items: center; gap: 12px; z-index: 9999; 
-            font-weight: 600; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .whatsapp-btn:hover { transform: scale(1.1) translateY(-5px); background: #1da851; }
-
-        /* BANNIÈRE HERO (Premier regard) */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images%20nouveau/baniere.jpg');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-            padding: 20px; border-bottom: 2px solid var(--gold);
-        }
-        .logo-main { width: 160px; margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 7vw, 4rem); color: var(--gold); line-height: 1.1; }
-        .hero-sub { font-size: 1.2rem; max-width: 800px; color: #f0f0f0; font-style: italic; margin: 20px 0 40px; }
-
-        /* SECTIONS & GRILLES */
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; scroll-behavior: smooth; }
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: flex; align-items: center; gap: 12px; z-index: 9999; font-weight: 600; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); transition: 0.4s; }
+        header { height: 100vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images nouveau/baniere.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-bottom: 2px solid var(--gold); }
+        .logo-main { width: 150px; margin-bottom: 20px; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 7vw, 4rem); color: var(--gold); }
         .container { max-width: 1200px; margin: auto; padding: 0 5%; }
-        .section-header { text-align: center; margin: 80px 0 40px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); }
-        
+        .section-header { text-align: center; margin: 60px 0 40px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); }
         .grid-pro { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .card-pro { background: var(--card-bg); border: 1px solid #222; transition: 0.4s; overflow: hidden; position: relative; }
-        .card-pro:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
-
+        .card-pro { background: var(--card-bg); border: 1px solid #222; overflow: hidden; text-align: center; }
         .img-box { width: 100%; height: 280px; overflow: hidden; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .card-pro:hover .img-box img { transform: scale(1.1); }
-        
-        .card-info { padding: 25px; text-align: center; }
-        .card-info h3 { color: var(--gold); font-family: 'Playfair Display', serif; margin-bottom: 8px; font-size: 1.5rem; }
-
-        /* ARCHIVES ÉLÉGANTES (Anciens projets) */
-        .archive-bg { background: #050505; padding: 100px 0; border-top: 1px solid #1a1a1a; }
-        .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
-        .card-archive { filter: grayscale(100%); transition: 0.5s; text-align: center; opacity: 0.4; }
-        .card-archive:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px); }
-        .card-archive img { width: 100%; height: 130px; object-fit: cover; border-radius: 4px; border: 1px solid #333; margin-bottom: 10px; }
-        .card-archive p { font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px; }
-
-        footer { text-align: center; padding: 80px 20px; background: #000; color: #333; font-size: 0.8rem; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .card-info { padding: 20px; }
+        .card-info h3 { color: var(--gold); font-family: 'Playfair Display', serif; }
+        .archive-bg { background: #050505; padding: 60px 0; border-top: 1px solid #1a1a1a; }
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; opacity: 0.5; }
+        .card-archive { text-align: center; filter: grayscale(100%); }
+        .card-archive img { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; border: 1px solid #333; }
+        footer { text-align: center; padding: 40px; color: #333; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <a href="https://wa.me/237683041117" class="whatsapp-btn" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="28" alt="WhatsApp">
-        Réserver votre table
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="25"> Réserver une table
     </a>
 
     <header>
-        <img src="images%20nouveau/logo.png" alt="Logo Borcelle" class="logo-main">
-        <h1 class="hero-title">L'Art de la Gastronomie <br> Camerounaise</h1>
-        <p class="hero-sub">"Une expérience sensorielle unique où chaque plat raconte une histoire."</p>
-        <a href="#menu" style="padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-radius: 2px;">Voir la Carte</a>
+        <img src="images nouveau/logo.png" class="logo-main">
+        <h1 class="hero-title">Borcelle Gastronomie</h1>
+        <p style="font-style: italic; color: #ccc;">L'excellence à chaque bouchée.</p>
     </header>
 
-    <main class="container" id="menu">
-        <div class="section-header"><h2>Nos Incontournables</h2></div>
-        
+    <main class="container">
+        <div class="section-header"><h2>Nos Spécialités</h2></div>
         <div class="grid-pro">
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/ndole1.jpg"></div><div class="card-info"><h3>Ndolé Royal</h3></div></div>
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/poulet1.jpg"></div><div class="card-info"><h3>Poulet Braisé Or</h3></div></div>
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/poulet2.jpg"></div><div class="card-info"><h3>Poulet Gourmet</h3></div></div>
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/plat1.jpg"></div><div class="card-info"><h3>Le Plateau Borcelle</h3></div></div>
-        </div>
-
-        <div class="section-header"><h2>Fraîcheur & Jus</h2></div>
-        <div class="grid-pro">
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/jus1.jpg"></div><div class="card-info"><h3>Nectars Pressés</h3></div></div>
-            <div class="card-pro"><div class="img-box"><img src="images%20nouveau/jus2.jpg"></div><div class="card-info"><h3>Cocktail Maison</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images nouveau/ndole1.jpg"></div><div class="card-info"><h3>Ndolé Royal</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images nouveau/poulet1.jpg"></div><div class="card-info"><h3>Poulet Braisé</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images nouveau/poulet2.jpg"></div><div class="card-info"><h3>Poulet Gourmet</h3></div></div>
+            <div class="card-pro"><div class="img-box"><img src="images nouveau/plat1.jpg"></div><div class="card-info"><h3>Le Plateau Borcelle</h3></div></div>
         </div>
     </main>
 
     <section class="archive-bg">
         <div class="container">
-            <div class="section-header"><h2 style="font-size: 1.5rem; color: #444;">Parcours & Archives</h2></div>
-            
+            <div class="section-header"><h2 style="font-size: 1.2rem; color: #444;">Archives & Parcours</h2></div>
             <div class="archive-grid">
-                <div class="card-archive"><img src="images%20nouveau/coiffure1.jpg"><p>Beauté v1</p></div>
-                <div class="card-archive"><img src="images%20nouveau/coiffure2.jpg"><p>Beauté v2</p></div>
-                <div class="card-archive"><img src="images%20nouveau/boutique1.jpg"><p>Mode v1</p></div>
-                <div class="card-archive"><img src="images%20nouveau/boutique2.jpg"><p>Mode v2</p></div>
-                
-                
-                <div class="card-archive"><img src="images%20nouveau/portfolio1.jpg"><p>Portfolio v1</p></div>
+                <div class="card-archive"><img src="images nouveau/coiffure1.jpg"><p>Beauté 1</p></div>
+                <div class="card-archive"><img src="images nouveau/boutique1.jpg"><p>Mode 1</p></div>
+                <div class="card-archive"><img src="images nouveau/portfolio1.jpg"><p>Ancien v1</p></div>
+                <div class="card-archive"><img src="images nouveau/restaurant1.jpg"><p>Resto v1</p></div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Borcelle Restaurant - Douala | Yaoundé</p>
-        <p style="margin-top: 10px;">Réalisation Portfolio témoignant d'une progression technique continue.</p>
-    </footer>
+    <footer>&copy; 2024 Borcelle Restaurant - Portfolio Évolutif</footer>
 
 </body>
 </html>
