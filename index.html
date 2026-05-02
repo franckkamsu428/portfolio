@@ -1,88 +1,202 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borcelle Gastronomie | Menu Prestige</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #d4af37; --dark-bg: #0a0a0a; --card-bg: #121212; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; }
-        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; z-index: 999; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        header { height: 50vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('baniere.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-bottom: 3px solid var(--gold); }
-        .logo-main { width: 100px; margin-bottom: 15px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); }
-        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-        h2 { font-family: 'Playfair Display', serif; color: var(--gold); text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
-        .img-box { width: 100%; height: 280px; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .info { padding: 15px; text-align: center; }
-        .info h3 { color: var(--gold); font-size: 1.1rem; }
-        .archive-section { background: #050505; padding: 40px 20px; border-top: 1px solid #222; margin-top: 40px; }
-    </style>
-</head>
-<body>
-
-    <a href="https://wa.me/237683041117" class="whatsapp-btn" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20"> Commander via WhatsApp
-    </a>
-
-    <header>
-        <img src="logo.png" class="logo-main">
-        <h1>Borcelle Gastronomie</h1>
-        <p>L'authenticité dans votre assiette</p>
-    </header>
-
-    <div class="container">
-        <h2>Notre Menu Gastronomique</h2>
-        <div class="grid">
-            <div class="card"><div class="img-box"><img src="ndole1.jpg"></div><div class="info"><h3>Ndolé Royal</h3></div></div>
-            <div class="card"><div class="img-box"><img src="poulet1.jpg"></div><div class="info"><h3>Poulet Braisé Maison</h3></div></div>
-            <div class="card"><div class="img-box"><img src="poulet2.jpg"></div><div class="info"><h3>Poulet Gourmet</h3></div></div>
-            <div class="card"><div class="img-box"><img src="poisson1.jpg"></div><div class="info"><h3>Poisson Braisé n°1</h3></div></div>
-            <div class="card"><div class="img-box"><img src="poisson2.jpg"></div><div class="info"><h3>Poisson Braisé n°2</h3></div></div>
-            <div class="card"><div class="img-box"><img src="eru1.jpg"></div><div class="info"><h3>Eru Traditionnel</h3></div></div>
-            <div class="card"><div class="img-box"><img src="jus1.jpg"></div><div class="info"><h3>Jus Naturels Pressés</h3></div></div>
-            <div class="card"><div class="img-box"><img src="plat1.jpg"></div><div class="info"><h3>Le Plateau Borcelle</h3></div></div>
-
-            <div class="card"><div class="img-box"><img src="restaurant1.jpg"></div><div class="info"><h3>Notre Cadre</h3></div></div>
-        </div>
-    </div>
-
-    <div class="archive-wrapper" style="text-align: center; padding: 40px 15px; background: #050505; border-top: 1px solid #222; margin-top: 30px;">
-        <button type="button" class="btn-archive" onclick="toggleArchives()" style="background: transparent; border: 1px solid #d4af37; color: #d4af37; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-family: sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-            Afficher les Archives (Anciens Projets)
-        </button>
-        
-        <div id="archive-content" style="display: none; margin-top: 25px;">
-            <div class="archive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px;">
-                
-                <div style="text-align: center;"><img src="coiffure1.jpg" style="width: 100%; height: 110px; object-fit: cover; border: 1px solid #444;"><p style="color: #d4af37; font-size: 0.7rem; margin-top: 5px;">COIFFURE 1</p></div>
-                <div style="text-align: center;"><img src="coiffure2.jpg" style="width: 100%; height: 110px; object-fit: cover; border: 1px solid #444;"><p style="color: #d4af37; font-size: 0.7rem; margin-top: 5px;">COIFFURE 2</p></div>
-                <div style="text-align: center;"><img src="boutique1.jpg" style="width: 100%; height: 110px; object-fit: cover; border: 1px solid #444;"><p style="color: #d4af37; font-size: 0.7rem; margin-top: 5px;">BOUTIQUE 1</p></div>
-                <div style="text-align: center;"><img src="boutique2.jpg" style="width: 100%; height: 110px; object-fit: cover; border: 1px solid #444;"><p style="color: #d4af37; font-size: 0.7rem; margin-top: 5px;">BOUTIQUE 2</p></div>
-                <div style="text-align: center;"><img src="portfolio1.jpg" style="width: 100%; height: 110px; object-fit: cover; border: 1px solid #444;"><p style="color: #d4af37; font-size: 0.7rem; margin-top: 5px;">PORTFOLIO</p></div>
-
-            </div>
-        </div>
-    </div>
-
-    <footer style="text-align: center; padding: 30px; color: #333; font-size: 0.8rem;">&copy; 2024 Borcelle Gastronomie</footer>
-
+    <title>Borcelle Gastronomie | Démonstration Création Site Vitrine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
-        function toggleArchives() {
-            var x = document.getElementById("archive-content");
-            if (x.style.display === "none" || x.style.display === "") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#d4af37',
+                        dark: '#0a0a0a',
+                        card: '#121212',
+                        premium: '#1e293b'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
             }
         }
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-gradient { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .portfolio-badge { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-white antialiased">
+
+    <!-- Bannière de Démonstration (Spécial ComeUp) -->
+    <div class="bg-premium text-white py-2 px-6 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs font-bold uppercase tracking-widest border-b border-gold/30">
+        <div class="flex items-center gap-2 mb-2 md:mb-0">
+            <span class="portfolio-badge w-2 h-2 bg-gold rounded-full"></span>
+            PROJET DÉMO : CRÉATION DE SITE VITRINE PREMIUM
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Développé par Franck Kamsu</span>
+            <span class="text-gold border border-gold/50 px-2 py-1 rounded">Modèle disponible sur ComeUp</span>
+        </div>
+    </div>
+
+    <!-- Bouton WhatsApp Flottant -->
+    <a href="https://wa.me/237683041117" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25d366] text-white px-6 py-3 rounded-full font-bold shadow-2xl flex items-center gap-3 hover:scale-110 transition-all">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="hidden md:inline">Commander via WhatsApp</span>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 bg-dark/90 backdrop-blur-md border-b border-white/5 top-12 md:top-8">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-serif text-2xl font-bold tracking-widest text-gold italic">
+                BORCELLE
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+                <a href="#accueil" class="hover:text-gold transition-colors">Accueil</a>
+                <a href="#menu" class="hover:text-gold transition-colors">Notre Menu</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center hero-gradient border-b-2 border-gold pt-20">
+        <div class="text-center px-6">
+            <img src="logo.png" alt="Logo Borcelle" class="w-24 mx-auto mb-6 opacity-90 drop-shadow-lg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3448/3448609.png'">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-gold mb-4">Borcelle Gastronomie</h1>
+            <p class="text-xl md:text-2xl font-light tracking-wide text-gray-300 italic mb-10">L'authenticité dans votre assiette</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="px-8 py-4 bg-gold text-dark font-bold rounded-full hover:bg-white transition-all uppercase tracking-widest text-sm">Explorer le menu</a>
+                <a href="#contact" class="px-8 py-4 border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all uppercase tracking-widest text-sm">Nous trouver</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl text-gold mb-4 tracking-tight">Notre Menu Prestige</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm italic mb-8">Un exemple concret d'interface fluide et appétissante conçue pour vos futurs clients.</p>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <!-- Grille des plats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Plat 1 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 shadow-xl">
+                    <div class="h-72 overflow-hidden">
+                        <img src="ndole1.jpg" alt="Plat Ndolé Royal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-gold font-serif text-xl mb-2">Ndolé Royal</h3>
+                        <p class="text-gray-400 text-sm italic">Le trésor de la cuisine camerounaise revisité.</p>
+                    </div>
+                </div>
+
+                <!-- Plat 2 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 shadow-xl">
+                    <div class="h-72 overflow-hidden">
+                        <img src="poulet1.jpg" alt="Poulet Braisé Maison" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-gold font-serif text-xl mb-2">Poulet Braisé Maison</h3>
+                        <p class="text-gray-400 text-sm italic">Une marinade secrète pour une saveur unique.</p>
+                    </div>
+                </div>
+
+                <!-- Plat 3 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 shadow-xl">
+                    <div class="h-72 overflow-hidden">
+                        <img src="poisson1.jpg" alt="Poisson Braisé" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-gold font-serif text-xl mb-2">Poisson Braisé Signature</h3>
+                        <p class="text-gray-400 text-sm italic">Fraîcheur garantie et épices sélectionnées.</p>
+                    </div>
+                </div>
+
+                <!-- Plat 4 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 shadow-xl">
+                    <div class="h-72 overflow-hidden">
+                        <img src="eru1.jpg" alt="Plat Eru Traditionnel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-gold font-serif text-xl mb-2">Eru Traditionnel</h3>
+                        <p class="text-gray-400 text-sm italic">L'authenticité des saveurs forestières.</p>
+                    </div>
+                </div>
+
+                <!-- Plat 5 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 shadow-xl">
+                    <div class="h-72 overflow-hidden">
+                        <img src="jus1.jpg" alt="Jus Naturels Pressés" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-gold font-serif text-xl mb-2">Jus Naturels Pressés</h3>
+                        <p class="text-gray-400 text-sm italic">Le goût pur des fruits de saison.</p>
+                    </div>
+                </div>
+
+                <!-- Plat 6 -->
+                <div class="group bg-card rounded-xl overflow-hidden border border-white/5 hover:border-gold transition-all duration-500 flex flex-col items-center justify-center p-8 border-dashed border-2 border-white/10">
+                    <i class="fas fa-magic text-4xl text-gold mb-4"></i>
+                    <h3 class="text-gold font-serif text-xl mb-2">Interface Sur-Mesure</h3>
+                    <p class="text-gray-400 text-sm text-center italic">Je conçois des sections interactives adaptées à votre image de marque.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-card py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl text-gold mb-8 italic">Borcelle Gastronomie</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-12 text-gray-400 mb-12">
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-tighter text-xs">Localisation</h4>
+                    <p class="text-sm">Douala / Yaoundé, Cameroun</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-tighter text-xs">Réservations</h4>
+                    <p class="text-sm">+237 683 041 117</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-tighter text-xs">Horaires</h4>
+                    <p class="text-sm">Lun - Dim : 11h00 - 23h00</p>
+                </div>
+            </div>
+            
+            <!-- Mention de création professionnelle -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-xs tracking-wide">
+                <p>&copy; 2024 Borcelle Gastronomie. Démo Portfolio.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/franckkamsu428" class="hover:text-gold transition-colors text-lg"><i class="fab fa-github"></i></a>
+                    <span class="bg-dark px-4 py-2 rounded-full border border-white/10">
+                        Réalisation : <span class="text-gold font-bold">Franck Kamsu</span> • Développeur Web
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
 
