@@ -65,6 +65,10 @@
             background: rgba(16, 185, 129, 0.1);
             transform: scale(1.1) rotate(5deg);
         }
+
+        .text-glow {
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 10px rgba(16, 185, 129, 0.3);
+        }
     </style>
 </head>
 <body class="selection:bg-emerald-500/30">
@@ -74,7 +78,7 @@
         <div class="glass-card rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
             <span class="font-heading text-xl text-white tracking-tighter">FK<span class="text-emerald-500">.</span></span>
             <div class="hidden md:flex gap-10 text-[9px] uppercase font-bold tracking-[0.4em] text-slate-400">
-                <a href="#projets" class="hover:text-emerald-400 transition-colors">Portfolio</a>
+                <a href="#projets" class="hover:text-emerald-400 transition-colors">Mes Réalisations</a>
                 <a href="#expertise" class="hover:text-emerald-400 transition-colors">Expertise</a>
             </div>
             <!-- Lien vers ton profil ComeUp -->
@@ -86,17 +90,16 @@
 
     <!-- SECTION HERO (ACCUEIL) -->
     <section class="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-        <!-- Effets de lumière en arrière-plan -->
         <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full"></div>
         <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/10 blur-[120px] rounded-full"></div>
         
         <div class="relative z-10 text-center max-w-5xl">
             <h1 class="text-6xl md:text-[100px] font-heading font-black text-white leading-[0.9] tracking-tighter mb-8 uppercase">
-                L'ART DU <br> <span class="animated-gradient-text italic font-light">DIGITAL.</span>
+                L'ART DU <br> <span class="animated-gradient-text italic font-light text-glow">DIGITAL.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-500 max-w-xl mx-auto mb-12 font-light leading-relaxed italic">
+            <p class="text-lg md:text-2xl text-slate-100 max-w-2xl mx-auto mb-12 font-light leading-relaxed italic">
                 Solutions web de haute voltige pour marques et entrepreneurs exigeants. 
-                Vitesse, élégance et <span class="text-white font-medium italic text-glow">résultats.</span>
+                Vitesse, élégance et <span class="text-emerald-400 font-medium italic">résultats.</span>
             </p>
             <a href="#projets" class="group flex items-center justify-center gap-4 text-white font-bold uppercase text-[10px] tracking-[0.4em]">
                 Découvrir l'impact
@@ -105,12 +108,12 @@
         </div>
     </section>
 
-    <!-- SECTION EXPERTISE (VALEURS) -->
+    <!-- SECTION EXPERTISE -->
     <section id="expertise" class="py-32 px-6 border-y border-white/5 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
                 <span class="text-[10px] uppercase tracking-[0.6em] text-emerald-500 font-black mb-4 block">Votre avantage compétitif</span>
-                <h2 class="text-3xl md:text-5xl font-heading text-white tracking-tighter uppercase italic">Une ingénierie <span class="text-emerald-500">invisible</span>, un impact <span class="text-emerald-500">majeur</span>.</h2>
+                <h2 class="text-3xl md:text-5xl font-heading text-white tracking-tighter uppercase italic">Une ingénierie <span class="text-emerald-400">invisible</span>, un impact <span class="text-emerald-400">majeur</span>.</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -121,7 +124,7 @@
                     </div>
                     <span class="text-emerald-500 text-[10px] font-black mb-4 block uppercase tracking-widest italic tracking-[0.2em]">01. Vitesse Ultime</span>
                     <h4 class="text-white font-bold text-lg mb-4">Performance sans compromis</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed italic">Optimisation radicale du code pour un chargement instantané, garantissant une rétention maximale de vos visiteurs.</p>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Optimisation radicale du code pour un chargement instantané.</p>
                 </div>
 
                 <!-- Design -->
@@ -131,7 +134,7 @@
                     </div>
                     <span class="text-blue-500 text-[10px] font-black mb-4 block uppercase tracking-widest italic tracking-[0.2em]">02. Design Couture</span>
                     <h4 class="text-white font-bold text-lg mb-4">Esthétique de Luxe</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed italic">Interfaces épurées et intuitives qui imposent votre autorité et renforcent la confiance de vos futurs clients.</p>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Interfaces épurées et intuitives qui imposent votre autorité.</p>
                 </div>
 
                 <!-- Conversion -->
@@ -141,33 +144,36 @@
                     </div>
                     <span class="text-emerald-500 text-[10px] font-black mb-4 block uppercase tracking-widest italic tracking-[0.2em]">03. ROI Orienté</span>
                     <h4 class="text-white font-bold text-lg mb-4">Focus Conversion</h4>
-                    <p class="text-xs text-slate-400 leading-relaxed italic">Chaque pixel est pensé stratégiquement pour guider le visiteur vers l'action et booster votre chiffre d'affaires.</p>
+                    <p class="text-xs text-slate-300 leading-relaxed italic">Chaque pixel est pensé stratégiquement pour guider le visiteur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION PROJETS (PORTFOLIO) -->
+    <!-- SECTION PROJETS -->
     <section id="projets" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center">
+                <span class="text-[10px] uppercase tracking-[0.6em] text-emerald-500 font-black mb-4 block">Démonstration de Savoir-Faire</span>
+                <h2 class="text-4xl md:text-7xl font-heading text-white tracking-tighter uppercase italic mb-6">Mes <span class="text-emerald-500">Réalisations</span>.</h2>
+                <p class="text-slate-100 text-xs uppercase tracking-widest font-light">Cliquez sur un projet pour explorer la démo en direct.</p>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                
-                <!-- PROJET 1 : BORCELLE -->
+                <!-- Projets cards (Borcelle, Fitness, Immo) -->
                 <div class="glass-card rounded-3xl overflow-hidden group shadow-xl">
                     <div class="aspect-[4/5] overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80" alt="Borcelle Gastronomie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                     </div>
                     <div class="p-10">
                         <h3 class="text-xl font-heading font-bold text-white mb-2 uppercase italic tracking-tighter">Borcelle Gastronomie</h3>
-                        <p class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest mb-6 tracking-[0.3em]">Hôtellerie & Luxe</p>
-                        <!-- Ton vrai lien GitHub pour Borcelle -->
-                        <a href="https://franckkamsu428.github.io/portfolio/" target="_blank" class="text-[9px] text-white/40 uppercase font-black tracking-[0.4em] hover:text-white transition-colors flex items-center gap-2">
+                        <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest mb-6 tracking-[0.3em]">Hôtellerie & Luxe</p>
+                        <a href="https://franckkamsu428.github.io/portfolio/" target="_blank" class="text-[9px] text-white uppercase font-black tracking-[0.4em] hover:text-emerald-400 transition-colors flex items-center gap-2">
                             Explorer le projet <i class="fas fa-arrow-right text-[8px]"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- PROJET 2 : FITNESS -->
                 <div class="glass-card rounded-3xl overflow-hidden group mt-12 md:mt-24 shadow-xl">
                     <div class="aspect-[4/5] overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Franck Fit Coaching" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
@@ -175,14 +181,12 @@
                     <div class="p-10">
                         <h3 class="text-xl font-heading font-bold text-white mb-2 uppercase italic tracking-tighter">Franck Fit Coaching</h3>
                         <p class="text-[10px] text-orange-500 font-bold uppercase tracking-widest mb-6 tracking-[0.3em]">Sport & Vitalité</p>
-                        <!-- Ton vrai lien GitHub pour Fitness -->
-                        <a href="https://franckkamsu428.github.io/fitness-coach/" target="_blank" class="text-[9px] text-white/40 uppercase font-black tracking-[0.4em] hover:text-white transition-colors flex items-center gap-2">
+                        <a href="https://franckkamsu428.github.io/fitness-coach/" target="_blank" class="text-[9px] text-white uppercase font-black tracking-[0.4em] hover:text-orange-400 transition-colors flex items-center gap-2">
                             Explorer le projet <i class="fas fa-arrow-right text-[8px]"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- PROJET 3 : IMMO -->
                 <div class="glass-card rounded-3xl overflow-hidden group mt-12 md:mt-0 shadow-xl">
                     <div class="aspect-[4/5] overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Immo Prestige" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
@@ -190,44 +194,41 @@
                     <div class="p-10">
                         <h3 class="text-xl font-heading font-bold text-white mb-2 uppercase italic tracking-tighter">Immo Prestige</h3>
                         <p class="text-[10px] text-blue-500 font-bold uppercase tracking-widest mb-6 tracking-[0.3em]">Immobilier de Luxe</p>
-                        <!-- Ton vrai lien GitHub pour Immo -->
-                        <a href="https://franckkamsu428.github.io/immo-prestige/" target="_blank" class="text-[9px] text-white/40 uppercase font-black tracking-[0.4em] hover:text-white transition-colors flex items-center gap-2">
+                        <a href="https://franckkamsu428.github.io/immo-prestige/" target="_blank" class="text-[9px] text-white uppercase font-black tracking-[0.4em] hover:text-blue-400 transition-colors flex items-center gap-2">
                             Explorer le projet <i class="fas fa-arrow-right text-[8px]"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- FOOTER SIGNATURE CHIC -->
+    <!-- FOOTER SIGNATURE -->
     <footer class="py-40 bg-black/40 border-t border-white/5 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-2xl font-light italic text-slate-500 mb-12 tracking-widest uppercase">L'excellence au service de vos ambitions.</h2>
+            <h2 class="text-2xl font-light italic text-slate-100 mb-12 tracking-widest uppercase text-glow">L'excellence au service de vos ambitions.</h2>
             
-            <a href="https://comeup.com/@votre-pseudo" target="_blank" class="inline-block border border-white/20 text-white px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black hover:border-white transition-all mb-32 shadow-xl">
+            <a href="https://comeup.com/@KamsuDigital" target="_blank" class="inline-block border border-white/40 text-white px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black hover:border-white transition-all mb-32 shadow-xl">
                 Collaborer maintenant
             </a>
 
-            <!-- LA SIGNATURE ÉPURÉE FINALE -->
             <div class="relative py-10">
-                <!-- Ligne de signature fine -->
-                <div class="absolute left-1/2 -translate-x-1/2 top-0 w-20 h-[1px] bg-emerald-500/40"></div>
+                <div class="absolute left-1/2 -translate-x-1/2 top-0 w-24 h-[1px] bg-emerald-500"></div>
                 
-                <div class="font-signature text-5xl md:text-6xl text-white tracking-[0.2em] mb-4">
+                <!-- NOM AGRANDI ET LUMINEUX -->
+                <div class="font-signature text-7xl md:text-[110px] text-white tracking-[0.05em] mb-4 text-glow">
                     Franck Kamsu
                 </div>
                 
-                <div class="text-[8px] uppercase tracking-[1.5em] text-slate-600 font-black">
+                <!-- SOUS-TITRE BEAUCOUP PLUS CLAIR ET LISIBLE -->
+                <div class="text-[12px] md:text-[16px] uppercase tracking-[1em] text-slate-100 font-black mb-8">
                     Développeur Web & Architecte Digital
                 </div>
                 
-                <!-- Détails supplémentaires pour le sérieux -->
-                <div class="mt-20 flex justify-center gap-12 text-slate-700 text-[9px] tracking-[0.5em] uppercase font-bold">
+                <div class="mt-20 flex justify-center gap-12 text-slate-500 text-[9px] tracking-[0.5em] uppercase font-bold">
                     <span>&copy; 2024</span>
                     <span>ComeUp Vendeur Vérifié</span>
-                    <span>International</span>
+                    <span>Expertise Internationale</span>
                 </div>
             </div>
         </div>
